@@ -1,31 +1,44 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
  */
 package com.centrocomercial.clases;
 
+import com.centrocomercial.interfaces.IControl;
+import com.centrocomercial.interfaces.IReparaciones;
+
 /**
  *
- * @author 
+ * @author
  */
-public class Aseos extends Edificio {
+public class Aseos extends Edificio implements IReparaciones, IControl {
 
-  
     private int planta;
     private int capacidad;
     private boolean limpio;
 
-    public Aseos() {
+    @Override
+    public String abrirPaso(String id) {
+        return "";
     }
 
-    public Aseos(int planta, int capacidad, boolean limpio) {
-        this.planta = planta;
-        this.capacidad = capacidad;
-        this.limpio = limpio;
+    @Override
+    public String cerrarPaso(String id) {
+        return "";
     }
-    
-    
-    
-    
+
+    @Override
+    public int controlPersonas(String id) {
+        return 7;
+    }
+
+    @Override
+    public String reparar(String id) {
+        return "";
+    }
+
+    @Override
+    public String limpiar(String id) {
+        return "";
+    }
+
 }
