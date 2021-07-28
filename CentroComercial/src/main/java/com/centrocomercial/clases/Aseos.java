@@ -9,8 +9,23 @@ package com.centrocomercial.clases;
  *
  * @author 
  */
-public class Aseos {
+public class Aseos extends Edificio {
+
+  
     private int planta;
     private int capacidad;
     private boolean limpio;
+
+    public Aseos() {
+    }
+
+    public Aseos(int planta, int capacidad, boolean limpio) {
+        this.planta = planta;
+        this.capacidad = capacidad;
+        this.limpio = limpio;
+    }
+    
+    
+    
+    
 }
