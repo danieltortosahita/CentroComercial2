@@ -1,14 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
  */
 package com.centrocomercial.interfaces;
 
 /**
- *
- * @author Dani
+ * 
+ * 
  */
 public interface IControl {
-    
+    public void abrirPaso(String id);
+    public void cerrarPaso(String id);
+    public void controlPersonas(String id); 
 }
