@@ -65,17 +65,17 @@ public class Locales extends Edificio implements IControl, IReparaciones {
     }
 
     @Override
-    public void abrirPaso(String id) {
+    public String abrirPaso(String id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void cerrarPaso(String id) {
+    public String cerrarPaso(String id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void controlPersonas(String id) {
+    public int controlPersonas(String id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     /**
@@ -86,7 +86,7 @@ public class Locales extends Edificio implements IControl, IReparaciones {
      * @param id identifica el id del local
      */
     @Override
-    public void reparar(String id) {
+    public String reparar(String id) {
         return "Se ha llamado al equipo de mantenimiento para realizar las "
                 + "reparaciones oportunas en el local " + id + ".";    }
     /**
@@ -96,7 +96,7 @@ public class Locales extends Edificio implements IControl, IReparaciones {
      * @param id identifica el id del local
      */
     @Override
-    public void limpiar(String id) {
+    public String limpiar(String id) {
         return "Se ha llamado al equipo de limpieza para limpiar el local " + id + ".";
     }
 
