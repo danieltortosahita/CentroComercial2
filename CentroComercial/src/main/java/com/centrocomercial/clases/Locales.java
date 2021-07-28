@@ -78,15 +78,26 @@ public class Locales extends Edificio implements IControl, IReparaciones {
     public void controlPersonas(String id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    /**
+     * Método que sobreescribe el método de la interfaz IReparaciones que
+     * servirá para llamar al equipo de mantenimiento y realizar las
+     * reparaciones oportunas.
+     *
+     * @param id identifica el id del local
+     */
     @Override
     public void reparar(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+        return "Se ha llamado al equipo de mantenimiento para realizar las "
+                + "reparaciones oportunas en el local " + id + ".";    }
+    /**
+     * Método que sobreescribe el método de la interfaz IReparaciones que
+     * servirá para llamar al equipo de limpieza.
+     *
+     * @param id identifica el id del local
+     */
     @Override
     public void limpiar(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Se ha llamado al equipo de limpieza para limpiar el local " + id + ".";
     }
 
     /**
@@ -99,7 +110,22 @@ public class Locales extends Edificio implements IControl, IReparaciones {
      * local.
      */
     public String alquilarLocal(String id) {
-        return "";
+               String resultado = "";
+
+        if (super.isDisponible()) {
+
+            super.setDisponible(false);
+
+            resultado = "El local con id " + id + " se ha alquilado.";
+
+        } else {
+
+            resultado = "El local " + id + " ya está alquilado, no se ha "
+                    + "realizado ninguna acción adicional.";
+
+        }
+
+        return resultado;
 
     }
 
@@ -113,7 +139,23 @@ public class Locales extends Edificio implements IControl, IReparaciones {
      * contrato de alquiler.
      */
     public String rescindirContrato(String id) {
-        return "";
+         String resultado = "";
+
+        if (!super.isDisponible()) {
+
+            super.setDisponible(true);
+
+            resultado = "Se ha rescindido con éxito el contrato de alquiler del "
+                    + "local: " + id + ".";
+
+        } else {
+
+            resultado = "El local " + id + " ya estaba disponible, no se ha "
+                    + "realizado ninguna acción adicional.";
+
+        }
+
+        return resultado;
     }
 
     public int verDisponibles() {
