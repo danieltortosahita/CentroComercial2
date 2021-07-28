@@ -86,7 +86,11 @@ public class Locales extends Edificio implements IControl, IReparaciones {
      * @param id identifica el id del local
      */
     @Override
+<<<<<<< HEAD
     public String reparar(String id) {
+=======
+    public void reparar(String id) {
+>>>>>>> master
         return "Se ha llamado al equipo de mantenimiento para realizar las "
                 + "reparaciones oportunas en el local " + id + ".";    }
     /**
@@ -96,7 +100,11 @@ public class Locales extends Edificio implements IControl, IReparaciones {
      * @param id identifica el id del local
      */
     @Override
+<<<<<<< HEAD
     public String limpiar(String id) {
+=======
+    public void limpiar(String id) {
+>>>>>>> master
         return "Se ha llamado al equipo de limpieza para limpiar el local " + id + ".";
     }
 
