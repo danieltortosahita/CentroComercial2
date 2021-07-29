@@ -6,6 +6,7 @@ package com.centrocomercial.interfaces;
 /**
  * Interface IReparaciones de la que implementarán las clases hijas de la clase
  * padre Edificio.
+ 
  */
 public interface IReparaciones {
 
