@@ -61,7 +61,7 @@ public class Locales extends Edificio implements IControl, IReparaciones {
 
     @Override
     public String toString() {
-        return "Locales{" + "tipoLocal=" + tipoLocal + ", area=" + area + ", capacidad=" + capacidad + ", numeroPlanta=" + numeroPlanta + '}';
+        return "ID: "+super.getId() + " || Local: " + tipoLocal + " || area: " + area + "m\u00B2 || capacidad: " + capacidad + " personas || Planta: " + numeroPlanta;
     }
 
     @Override
