@@ -35,13 +35,15 @@ public class Edificio {
         this.id = id;
     }
 
+    public void setHorarioApertura(String horarioApertura) {
+        this.horarioApertura = horarioApertura;
+    }
+    
     public String getHorarioApertura() {
         return horarioApertura;
     }
 
-    public void setHorarioApertura(String horarioApertura) {
-        this.horarioApertura = horarioApertura;
-    }
+    
 
     public String getHorarioCierre() {
         return horarioCierre;
@@ -81,7 +83,7 @@ public class Edificio {
     }
 
     public String horarioApertura() {
-        return "";
+        return "El horario de apertura es de " + getHorarioApertura() + getHorarioCierre();
     }
 
     public String indicativoLugar() {

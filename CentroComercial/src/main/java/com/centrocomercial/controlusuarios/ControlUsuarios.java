@@ -26,7 +26,7 @@ public class ControlUsuarios {
      */
     public boolean addUsuario (String nombre, String pass) {
         int tamanioAntiguo = usuarios.size();
-        usuarios.put(pass, pass);
+        usuarios.put(nombre, pass);
         if (tamanioAntiguo == (usuarios.size() - 1))
             return true;
         else

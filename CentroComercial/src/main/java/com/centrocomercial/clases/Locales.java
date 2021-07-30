@@ -1,13 +1,12 @@
 package com.centrocomercial.clases;
 
-import com.centrocomercial.interfaces.IControl;
 import com.centrocomercial.interfaces.IReparaciones;
 
 /**
  *
  * @author Dani
  */
-public class Locales extends Edificio implements IControl, IReparaciones {
+public class Locales extends Edificio  implements IReparaciones {
 
     private String tipoLocal;
     private int area, capacidad, numeroPlanta;
@@ -64,47 +63,7 @@ public class Locales extends Edificio implements IControl, IReparaciones {
         return "ID: "+super.getId() + " || Local: " + tipoLocal + " || area: " + area + "m\u00B2 || capacidad: " + capacidad + " personas || Planta: " + numeroPlanta;
     }
 
-    @Override
-    public String abrirPaso(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String cerrarPaso(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int controlPersonas(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    /**
-     * Método que sobreescribe el método de la interfaz IReparaciones que
-     * servirá para llamar al equipo de mantenimiento y realizar las
-     * reparaciones oportunas.
-     *
-     * @param id identifica el id del local
-     */
-    @Override
-    public String reparar(String id) {
-
-        return "Se ha llamado al equipo de mantenimiento para realizar las "
-                + "reparaciones oportunas en el local " + id + ".";    
-    }
-    /**
-     * Método que sobreescribe el método de la interfaz IReparaciones que
-     * servirá para llamar al equipo de limpieza.
-     *
-     * @param id identifica el id del local
-     */
-    @Override
-
-    public String limpiar(String id) {
-
-
-        return "Se ha llamado al equipo de limpieza para limpiar el local " + id + ".";
-    }
-
+    
     /**
      * Con este método lo que haremos será alquilar el local. Verificaremos si
      * este local está alquilado o no. Devolveremos una cadena de texto si se ha
@@ -162,13 +121,52 @@ public class Locales extends Edificio implements IControl, IReparaciones {
 
         return resultado;
     }
+    
+    
+    
+    /**
+     * Método que sobreescribe el método de la interfaz IReparaciones que
+     * servirá para llamar al equipo de mantenimiento y realizar las
+     * reparaciones oportunas.
+     *
+     * @param id identifica el id del local
+     */
+    
+    @Override
+    public String reparar(String id) {
 
-    public int verDisponibles() {
-        return 0;
+        return "Se ha llamado al equipo de mantenimiento para realizar las "
+                + "reparaciones oportunas en el local " + id + ".";    
+    }
+    
+    
+    /**
+     * Método que sobreescribe el método de la interfaz IReparaciones que
+     * servirá para llamar al equipo de limpieza.
+     *
+     * @param id identifica el id del local
+     */
+    
+    @Override
+    public String limpiar(String id) {
+                
+        return "Se ha llamado al equipo de limpieza para limpiar el local " + id + ".";
     }
 
-    public String listado() {
-        return "";
-    }
+    
+      @Override
+    public String horarioApertura() {
+        return "El horario de apertura de los locales es: " + super.getHorarioApertura() + " a " + super.getHorarioCierre();
 
+    }
+    
+    
+        public String indicativoLugar(String id) {
+        String enPlanta = "estas en los locales de la planta " + this.numeroPlanta;
+        if (numeroPlanta < 0) {
+            enPlanta = "Estás en los locales del parking ";
+        }
+
+        return enPlanta;
+    }
 }
